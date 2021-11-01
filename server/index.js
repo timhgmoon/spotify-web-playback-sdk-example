@@ -1,6 +1,7 @@
 const express = require('express')
 const request = require('request');
 const dotenv = require('dotenv');
+const cors = require('cors')
 
 const port = 5000
 
@@ -8,8 +9,8 @@ global.access_token = ''
 
 dotenv.config()
 
-var spotify_client_id = process.env.SPOTIFY_CLIENT_ID
-var spotify_client_secret = process.env.SPOTIFY_CLIENT_SECRET
+var spotify_client_id = "3379c8a726944216a96001c56bf22b68"
+var spotify_client_secret = "113ec63e7f2244b08a6940d12210e193"
 
 var spotify_redirect_uri = 'http://localhost:3000/auth/callback'
 
@@ -24,10 +25,13 @@ var generateRandomString = function (length) {
 };
 
 var app = express();
+app.use(cors());
 
 app.get('/auth/login', (req, res) => {
 
   var scope = "streaming user-read-email user-read-private"
+      + " user-library-read user-library-modify" 
+      + " user-read-playback-state user-modify-playback-state"
   var state = generateRandomString(16);
 
   var auth_query_parameters = new URLSearchParams({

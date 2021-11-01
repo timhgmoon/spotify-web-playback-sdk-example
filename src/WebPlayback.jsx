@@ -65,44 +65,98 @@ function WebPlayback(props) {
         };
     }, []);
 
-    if (!is_active) { 
-        return (
-            <>
-                <div className="container">
+    // if (!is_active) { 
+    //     return (
+    //         <>
+    //             <div className="container">
+    //                 <div className="main-wrapper">
+    //                     <b> Instance not active. Transfer your playback using your Spotify app </b>
+    //                 </div>
+    //             </div>
+    //         </>)
+    // } else {
+    //     return (
+    //         <>
+    //             <div className="container">
+    //                 <div className="main-wrapper">
+
+    //                     <img src={current_track.album.images[0].url} className="now-playing__cover" alt="" />
+
+    //                     <div className="now-playing__side">
+    //                         <div className="now-playing__name">{current_track.name}</div>
+    //                         <div className="now-playing__artist">{current_track.artists[0].name}</div>
+
+    //                         <button className="btn-spotify" onClick={() => { player.previousTrack() }} >
+    //                             &lt;&lt;
+    //                         </button>
+
+    //                         <button className="btn-spotify" onClick={() => { player.togglePlay() }} >
+    //                             { is_paused ? "PLAY" : "PAUSE" }
+    //                         </button>
+
+    //                         <button className="btn-spotify" onClick={() => { player.nextTrack() }} >
+    //                             &gt;&gt;
+    //                         </button>
+    //                     </div>
+    //                 </div>
+    //             </div>
+    //         </>
+    //     );
+    // }
+    const check_status = () => {
+        if(!is_active) {
+            return (
+                <div>
                     <div className="main-wrapper">
                         <b> Instance not active. Transfer your playback using your Spotify app </b>
                     </div>
                 </div>
-            </>)
-    } else {
-        return (
-            <>
-                <div className="container">
-                    <div className="main-wrapper">
+            )
+        } else {
+            return (
+                <div className="main-wrapper">
+                    <img src={current_track.album.images[0].url} className="now-playing__cover" alt="" />
+                    <div className="now-playing__side">
+                        <div className="now-playing__name">{current_track.name}</div>
+                        <div className="now-playing__artist">{current_track.artists[0].name}</div>
 
-                        <img src={current_track.album.images[0].url} className="now-playing__cover" alt="" />
+                        <button className="btn-spotify" onClick={() => { player.previousTrack() }} >
+                            &lt;&lt;
+                        </button>
 
-                        <div className="now-playing__side">
-                            <div className="now-playing__name">{current_track.name}</div>
-                            <div className="now-playing__artist">{current_track.artists[0].name}</div>
+                        <button className="btn-spotify" onClick={() => { player.togglePlay() }} >
+                            { is_paused ? "PLAY" : "PAUSE" }
+                        </button>
 
-                            <button className="btn-spotify" onClick={() => { player.previousTrack() }} >
-                                &lt;&lt;
-                            </button>
-
-                            <button className="btn-spotify" onClick={() => { player.togglePlay() }} >
-                                { is_paused ? "PLAY" : "PAUSE" }
-                            </button>
-
-                            <button className="btn-spotify" onClick={() => { player.nextTrack() }} >
-                                &gt;&gt;
-                            </button>
-                        </div>
+                        <button className="btn-spotify" onClick={() => { player.nextTrack() }} >
+                            &gt;&gt;
+                        </button>
                     </div>
                 </div>
-            </>
-        );
+            )
+        }
     }
+
+    //TESTING
+    // const getTrack = async(token, track) => {
+    //     const res = await fetch(`https://api.spotify.com/v1/search?q=${track}&type=track&q=beiber&type=artist&track&limit=1`, {
+    //         method: 'GET',
+    //         headers: {'Authorization': 'Bearer ' +  token}
+    //     });
+
+    //     const json = await res.json();
+    //     return json;
+    // } 
+
+    // console.log(getTrack(props.token, 'peaches'))
+
+    return (
+        <div className="container">
+            <h1>hello</h1>
+            {check_status()}
+        </div>      
+              
+    )
 }
 
 export default WebPlayback
