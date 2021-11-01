@@ -8,7 +8,7 @@ function App() {
 
   const [token, setToken] = useState('');
   const [melonChart, setMelonChart] = useState();
-  const MELON_API = "https://localhost:5000https://melon.danielko.me/api/v1/chart/live";
+
 
   useEffect(() => {
 
@@ -21,20 +21,6 @@ function App() {
     getToken();
 
   }, []);
-  
-  // curl 'https://melon.danielko.me/api/v1/chart/live';
-  // fetch('https://melon.danielko.me/api/v1/chart/live')
-  // .then(res => res.json())
-  // .then(console.log)
-  // useEffect(() => {
-  //   async function getMelonChart() {
-  //     const response = await fetch(MELON_API)
-  //     const json = await response.json();
-  //     setMelonChart(json);
-  //   }
-  //   getMelonChart();
-  // }, []);
-  // console.log(melonChart);
  
   return (
     <>

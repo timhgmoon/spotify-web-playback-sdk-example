@@ -137,18 +137,18 @@ function WebPlayback(props) {
         }
     }
 
-    //TESTING
-    // const getTrack = async(token, track) => {
-    //     const res = await fetch(`https://api.spotify.com/v1/search?q=${track}&type=track&q=beiber&type=artist&track&limit=1`, {
-    //         method: 'GET',
-    //         headers: {'Authorization': 'Bearer ' +  token}
-    //     });
+    // TESTING
+    const getTrack = async(token, track) => {
+        const res = await fetch(`https://api.spotify.com/v1/search?q=${track}&type=track&q=beiber&type=artist&track&limit=1`, {
+            method: 'GET',
+            headers: {'Authorization': 'Bearer ' +  token}
+        });
 
-    //     const json = await res.json();
-    //     return json;
-    // } 
+        const json = await res.json();
+        return json;
+    } 
 
-    // console.log(getTrack(props.token, 'peaches'))
+    console.log(getTrack(props.token, 'peaches'))
 
     return (
         <div className="container">
