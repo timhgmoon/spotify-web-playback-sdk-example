@@ -15,7 +15,6 @@ This app will use the spotify api which can be found here https://developer.spot
 Use this section to include info about the API you have chosen and a code snippet of the data that it returns and is required for your project. 
 https://developer.spotify.com/documentation/web-api/
 
-
 ```
 {external_urls: {spotify: 'https://open.spotify.com/track/4iJyoBOLtHqaGxP12qzhQI'}
 href: "https://api.spotify.com/v1/tracks/4iJyoBOLtHqaGxP12qzhQI"
@@ -27,6 +26,11 @@ preview_url: null
 track_number: 12
 type: "track"
 uri: "spotify:track:4iJyoBOLtHqaGxP12qzhQI" }
+```
+https://melon.danielko.me/api/v1/chart/live
+
+```
+{name: 'strawberry moon', artists: '아이유', ranking: 1, songId: '34101563', albumId: '10743453'
 ```
 
 

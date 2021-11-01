@@ -21,7 +21,19 @@ function App() {
     getToken();
 
   }, []);
- 
+
+  useEffect(() => {
+    async function getMelonChart(){
+    const response = await fetch('https://cors-anywhere.herokuapp.com/https://melon.danielko.me/api/v1/chart/live', {
+      headers: {
+        "X-Requested-With": "XMLHttpRequest"
+      }
+    })
+    const json = await response.json();
+    console.log(json);
+    }
+    getMelonChart();
+  })
   return (
     <>
       <div>main</div>
