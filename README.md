@@ -84,11 +84,11 @@ Time frames are also key in the development cycle.  You have limited time to cod
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
 | Styling | M | 7hrs| tbd | tbd |
-| Working with API | H | 10hrs| 10hrs | tbd |
-| Listing top tracks | H | 4| tbd | tbd |
-| Grabbing selected track | H | 3| tbd | tbd |
-| Getting lyrics | M | 5| tbd | tbd |
-| Total | H | 6hrs| 5hrs | 5hrs |
+| Working with API | H | 15hrs| 10hrs | tbd |
+| Listing top tracks | H | 4hrs| tbd | tbd |
+| Grabbing selected track | H | 3hrs| tbd | tbd |
+| Getting lyrics | M | 5hrs| tbd | tbd |
+| Total | H | 32hrs| tbd | tbd |
 
 ## Additional Libraries
  Use this section to list all supporting libraries and their role in the project such as Axios, ReactStrap, D3, etc. 
