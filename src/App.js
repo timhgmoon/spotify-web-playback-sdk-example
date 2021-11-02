@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react';
+import {Route, Link, Switch} from 'react-router-dom'
 import WebPlayback from './WebPlayback'
 import Login from './Login'
 import './App.css';
-// import { response } from 'express';
+import Home from './Home';
 
 function App() {
 
@@ -30,14 +31,33 @@ function App() {
       }
     })
     const json = await response.json();
-    console.log(json);
+    setMelonChart(json);
     }
     getMelonChart();
   })
   return (
     <>
+      <div className="app">
+        <nav>
+          <Link to='/'>
+            <p className="nav-link logo">Top-100</p>
+          </Link>
+          <Link to='/About'>
+            <p className="nav-link small-nav">About</p>
+          </Link>
+          <Link to='/Login'>
+            <p className="nav-link small-nav">Login</p>
+          </Link>
+          <main>
+            <Route path='/Home' exact render={routerProps =>
+            <Home {...routerProps} melonChart={melonChart} />} />
+            <Route path='/Login' component={Login} />
+            <Route path='/About' render={routerProps => <WebPlayback {...routerProps} token={token} />} />
+          </main>
+        </nav>
+      </div>
       <div>main</div>
-        { (token === '') ? <Login/> : <WebPlayback token={token} /> }
+        {/* { (token === '') ? <Login/> : <WebPlayback token={token} /> } */}
     </>
   );
 }

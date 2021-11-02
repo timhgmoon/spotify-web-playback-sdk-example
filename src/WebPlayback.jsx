@@ -139,7 +139,8 @@ function WebPlayback(props) {
 
     // TESTING
     const getTrack = async(token, track) => {
-        const res = await fetch(`https://api.spotify.com/v1/search?q=${track}&type=track&q=beiber&type=artist&track&limit=1`, {
+        //URL HARD CODED(FOR NOW)
+        const res = await fetch(`https://api.spotify.com/v1/search?q=사랑은 늘 도망가&type=track&q=임영웅&type=artist&track&limit=1`, {
             method: 'GET',
             headers: {'Authorization': 'Bearer ' +  token}
         });
