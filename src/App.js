@@ -1,15 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import {Route, Link, Switch} from 'react-router-dom'
-import WebPlayback from './WebPlayback'
+import Track from './Track'
 import Login from './Login'
 import './App.css';
 import Home from './Home';
+import Nav from './Nav';
 
 function App() {
 
   const [token, setToken] = useState('');
-  const [melonChart, setMelonChart] = useState();
-
 
   useEffect(() => {
 
@@ -23,22 +22,12 @@ function App() {
 
   }, []);
 
-  useEffect(() => {
-    async function getMelonChart(){
-    const response = await fetch('https://cors-anywhere.herokuapp.com/https://melon.danielko.me/api/v1/chart/live', {
-      headers: {
-        "X-Requested-With": "XMLHttpRequest"
-      }
-    })
-    const json = await response.json();
-    setMelonChart(json);
-    }
-    getMelonChart();
-  })
   return (
     <>
       <div className="app">
-        <nav>
+
+        <Nav />
+        {/* <nav>
           <Link to='/'>
             <p className="nav-link logo">Top-100</p>
           </Link>
@@ -47,17 +36,17 @@ function App() {
           </Link>
           <Link to='/Login'>
             <p className="nav-link small-nav">Login</p>
-          </Link>
+          </Link> */}
+        {/* </nav> */}
           <main>
-            <Route path='/Home' exact render={routerProps =>
-            <Home {...routerProps} melonChart={melonChart} />} />
+            <Route path='/' exact render={routerProps =>
+            <Home {...routerProps} />} />
             <Route path='/Login' component={Login} />
-            <Route path='/About' render={routerProps => <WebPlayback {...routerProps} token={token} />} />
+            <Route path='/About' render={routerProps => <Track {...routerProps} token={token} />} />
           </main>
-        </nav>
+        
       </div>
-      <div>main</div>
-        {/* { (token === '') ? <Login/> : <WebPlayback token={token} /> } */}
+        {/* { (token === '') ? <Login/> : <Track token={token} /> } */}
     </>
   );
 }
