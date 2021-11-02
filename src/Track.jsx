@@ -13,7 +13,6 @@ const track = {
 }
 
 function WebPlayback(props) {
-
     const [is_paused, setPaused] = useState(false);
     const [is_active, setActive] = useState(false);
     const [player, setPlayer] = useState(undefined);
@@ -52,12 +51,14 @@ function WebPlayback(props) {
                 }
 
                 setTrack(state.track_window.current_track);
+                
+                // console.log(state)
                 setPaused(state.paused);
 
                 player.getCurrentState().then( state => { 
                     (!state)? setActive(false) : setActive(true) 
                 });
-
+                
             }));
 
             player.connect();
@@ -65,44 +66,6 @@ function WebPlayback(props) {
         };
     }, []);
 
-    // if (!is_active) { 
-    //     return (
-    //         <>
-    //             <div className="container">
-    //                 <div className="main-wrapper">
-    //                     <b> Instance not active. Transfer your playback using your Spotify app </b>
-    //                 </div>
-    //             </div>
-    //         </>)
-    // } else {
-    //     return (
-    //         <>
-    //             <div className="container">
-    //                 <div className="main-wrapper">
-
-    //                     <img src={current_track.album.images[0].url} className="now-playing__cover" alt="" />
-
-    //                     <div className="now-playing__side">
-    //                         <div className="now-playing__name">{current_track.name}</div>
-    //                         <div className="now-playing__artist">{current_track.artists[0].name}</div>
-
-    //                         <button className="btn-spotify" onClick={() => { player.previousTrack() }} >
-    //                             &lt;&lt;
-    //                         </button>
-
-    //                         <button className="btn-spotify" onClick={() => { player.togglePlay() }} >
-    //                             { is_paused ? "PLAY" : "PAUSE" }
-    //                         </button>
-
-    //                         <button className="btn-spotify" onClick={() => { player.nextTrack() }} >
-    //                             &gt;&gt;
-    //                         </button>
-    //                     </div>
-    //                 </div>
-    //             </div>
-    //         </>
-    //     );
-    // }
     const check_status = () => {
         if(!is_active) {
             return (
@@ -116,6 +79,7 @@ function WebPlayback(props) {
             return (
                 <div className="main-wrapper">
                     <img src={current_track.album.images[0].url} className="now-playing__cover" alt="" />
+                   
                     <div className="now-playing__side">
                         <div className="now-playing__name">{current_track.name}</div>
                         <div className="now-playing__artist">{current_track.artists[0].name}</div>
@@ -137,23 +101,36 @@ function WebPlayback(props) {
         }
     }
 
-    // TESTING
-    const getTrack = async(token, track) => {
-        //URL HARD CODED(FOR NOW)
-        const res = await fetch(`https://api.spotify.com/v1/search?q=사랑은 늘 도망가&type=track&q=임영웅&type=artist&track&limit=1`, {
+    useEffect(() => {
+        fetch(`https://api.spotify.com/v1/search?q=${props.currentTrack.name}&type=track&q=${props.currentTrack.artist}&type=artist&limit=1`, {
             method: 'GET',
-            headers: {'Authorization': 'Bearer ' +  token}
-        });
+            headers: {'Authorization': 'Bearer ' +  props.token}
+        })
+            .then(res => res.json())
+            .then(json => {
+                setTrack(json.tracks.items[0])
+                console.log(json)
+            } )
+        // 
+    }, [])
+    // TESTING
+    // const getTrack = async(token, track, artist) => {
+    //     //URL HARD CODED(FOR NOW)
+    //     const res = await fetch(`https://api.spotify.com/v1/search?q=${track}&type=track&q=${artist}&type=artist&limit=1`, {
+    //         method: 'GET',
+    //         headers: {'Authorization': 'Bearer ' +  token}
+    //     });
+    //     const json = await res.json();
+    //     console.log(json)
+    //     // setTrack(json.tracks.items[0])
+    // } 
 
-        const json = await res.json();
-        return json;
-    } 
-
-    console.log(getTrack(props.token, 'peaches'))
-
+    // getTrack(props.token, props.currentTrack.name, props.currentTrack.artists);
     return (
         <div className="container">
             <h1>hello</h1>
+            {props.currentTrack &&<li>{props.currentTrack.name}</li>}
+            {props.currentTrack && <li>{props.currentTrack.artists}</li>}
             {check_status()}
         </div>      
               

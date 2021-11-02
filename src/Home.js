@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 
 const Home = (props) => {
 
   const [melonChart, setMelonChart] = useState();
+  
 
   useEffect(() => {
     fetch('https://corsanywhere.herokuapp.com/https://melon.danielko.me/api/v1/chart/live', {
@@ -22,8 +24,14 @@ const Home = (props) => {
   return (
     <>
      {melonChart && melonChart.map(track => {
-    return <li>{track.ranking}. {track.name} - {track.artists}</li>
-  })}
+        return  (
+          <p>
+            <Link to={'/songs/' + track.name} key={track.ranking}onClick={() => {
+              props.handleOnClick(track)
+            }}>{track.ranking}. {track.name} - {track.artists} </Link>
+          </p>
+        )
+    })}
     
     </>
   )

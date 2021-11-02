@@ -9,6 +9,12 @@ import Nav from './Nav';
 function App() {
 
   const [token, setToken] = useState('');
+  const [currentTrack, setCurrentTrack] = useState();
+
+  const handleOnClick = (track) => {
+    setCurrentTrack(track);
+  }
+
 
   useEffect(() => {
 
@@ -27,22 +33,12 @@ function App() {
       <div className="app">
 
         <Nav />
-        {/* <nav>
-          <Link to='/'>
-            <p className="nav-link logo">Top-100</p>
-          </Link>
-          <Link to='/About'>
-            <p className="nav-link small-nav">About</p>
-          </Link>
-          <Link to='/Login'>
-            <p className="nav-link small-nav">Login</p>
-          </Link> */}
-        {/* </nav> */}
-          <main>
+        <main>
             <Route path='/' exact render={routerProps =>
-            <Home {...routerProps} />} />
+            <Home {...routerProps} handleOnClick={handleOnClick}/>} />
             <Route path='/Login' component={Login} />
-            <Route path='/About' render={routerProps => <Track {...routerProps} token={token} />} />
+            {/* <Route path='/About' render={routerProps => <Track {...routerProps} token={token} />} /> */}
+            <Route path="/songs/:song" render={routerProps => <Track {...routerProps} currentTrack={currentTrack} token={token}/>} />
           </main>
         
       </div>
