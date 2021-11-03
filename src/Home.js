@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import Card from 'react-bootstrap/Card';
 
 
 const Home = (props) => {
@@ -23,13 +24,21 @@ const Home = (props) => {
   
   return (
     <>
+
+    <Card.Body>Ranking | Song Name | Artist</Card.Body>
      {melonChart && melonChart.map(track => {
         return  (
-          <p>
+          <Card>
             <Link to={'/songs/' + track.name} key={track.ranking}onClick={() => {
               props.handleOnClick(track)
-            }}>{track.ranking}. {track.name} - {track.artists} </Link>
-          </p>
+            }}>
+              <Card.Body>
+                {track.ranking}. {track.name} - {track.artists} 
+              </Card.Body>
+            </Link>
+          </Card>
+
+            
         )
     })}
     

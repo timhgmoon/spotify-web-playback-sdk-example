@@ -1,10 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import {Route, Link, Switch} from 'react-router-dom'
+import {Route, Link, Switch} from 'react-router-dom';
+import './App.css';
 import Track from './Track'
 import Login from './Login'
-import './App.css';
 import Home from './Home';
 import Nav from './Nav';
+
 
 function App() {
 

@@ -1,143 +1,48 @@
 import React, { useState, useEffect } from 'react';
-import SpotifyPlayer from 'react-spotify-web-playback'
+import SpotifyPlayer from 'react-spotify-web-playback';
+import Card from 'react-bootstrap';
 
-
-// const track = {
-//     name: "",
-//     album: {
-//         images: [
-//             { url: "" }
-//         ]
-//     },
-//     artists: [
-//         { name: "" }
-//     ]
-// }
 
 function WebPlayback(props) {
-//      console.log(props.token);
-//     const [is_paused, setPaused] = useState(false);
-//     const [is_active, setActive] = useState(false);
-//     const [player, setPlayer] = useState(undefined);
-    // const [current_track, setTrack] = useState(track);
-
-//     useEffect(() => {
-
-//         const script = document.createElement("script");
-//         script.src = "https://sdk.scdn.co/spotify-player.js";
-//         script.async = true;
-
-//         document.body.appendChild(script);
-
-//         window.onSpotifyWebPlaybackSDKReady = () => {
-
-//             const player = new window.Spotify.Player({
-//                 name: 'Web Playback SDK',
-//                 getOAuthToken: cb => { cb(props.token); },
-//                 volume: 0.5
-//             });
-
-//             setPlayer(player);
-
-//             player.addListener('ready', ({ device_id }) => {
-//                 console.log('Ready with Device ID', device_id);
-//             });
-
-//             player.addListener('not_ready', ({ device_id }) => {
-//                 console.log('Device ID has gone offline', device_id);
-//             });
-
-//             player.addListener('player_state_changed', ( state => {
-
-//                 if (!state) {
-//                     return;
-//                 }
-
-//                 setTrack(state.track_window.current_track);
-                
-//                 setPaused(state.paused);
-
-//                 player.getCurrentState().then( state => { 
-//                     (!state)? setActive(false) : setActive(true) 
-//                 });
-                
-//             }));
-
-//             player.connect();
-
-//         };
-//     }, []);
-
-//     const check_status = () => {
-//         if(!is_active) {
-//             return (
-//                 <div>
-//                     <div className="main-wrapper">
-//                         <b> Instance not active. Transfer your playback using your Spotify app </b>
-//                     </div>
-//                 </div>
-//             )
-//         } else {
-//             return (
-//                 <div className="main-wrapper">
-//                     <img src={current_track.album.images[0].url} className="now-playing__cover" alt="" />
-                   
-//                     <div className="now-playing__side">
-//                         <div className="now-playing__name">{current_track.name}</div>
-//                         <div className="now-playing__artist">{current_track.artists[0].name}</div>
-
-//                         <button className="btn-spotify" onClick={() => { player.previousTrack() }} >
-//                             &lt;&lt;
-//                         </button>
-
-//                         <button className="btn-spotify" onClick={() => { player.togglePlay() }} >
-//                             { is_paused ? "PLAY" : "PAUSE" }
-//                         </button>
-
-//                         <button className="btn-spotify" onClick={() => { player.nextTrack() }} >
-//                             &gt;&gt;
-//                         </button>
-//                     </div>
-//                 </div>
-//             )
-//         }
-//     }
+    const [current_track, setTrack] = useState();
 
 
-    // useEffect(() => {
-    //     fetch(`https://api.spotify.com/v1/search?q=${props.currentTrack.name}&type=track&q=${props.currentTrack.artist}&type=artist&limit=1`, {
-    //         method: 'GET',
-    //         headers: {'Authorization': 'Bearer ' +  props.token}
-    //     })
-    //         .then(res => res.json())
-    //         .then(json => {
-    //             setTrack(json.tracks.items[0])
-    //             console.log(json)
-    //         } )
-    //     // 
-    // }, [])
-    // TESTING
-    // const getTrack = async(token, track, artist) => {
-    //     //URL HARD CODED(FOR NOW)
-    //     const res = await fetch(`https://api.spotify.com/v1/search?q=${track}&type=track&q=${artist}&type=artist&limit=1`, {
-    //         method: 'GET',
-    //         headers: {'Authorization': 'Bearer ' +  token}
-    //     });
-    //     const json = await res.json();
-    //     console.log(json)
-    //     // setTrack(json.tracks.items[0])
-    // } 
-
-    // getTrack(props.token, props.currentTrack.name, props.currentTrack.artists);
+    useEffect(() => {
+        fetch(`https://api.spotify.com/v1/search?q=${props.currentTrack.name}&type=track&q=${props.currentTrack.artists}&type=artist&limit=1`, {
+            method: 'GET',
+            headers: {'Authorization': 'Bearer ' +  props.token}
+        })
+            .then(res => res.json())
+            .then(json => {
+                setTrack(json.tracks.items[0])
+                console.log(json.tracks.items[0])
+                console.log(json.tracks.items[0].album.images)
+            } )
+    }, [])
+   
     return (
+        <>
         <div className="container">
-            <h1>hello</h1>
-            {props.currentTrack &&<li>{props.currentTrack.name}</li>}
-            {props.currentTrack && <li>{props.currentTrack.artists}</li>}
-            {/* {check_status()} */}
+            {current_track && <div>card container
+                <li>{props.currentTrack.name}</li>
+                <li>{props.currentTrack.artists}</li>
+                <img src={current_track.album.images[0].url} alt={props.currentTrack.name}/>
+            </div>}
+           
 
-            <SpotifyPlayer token={props.token} uris = {'spotify:artist:6HQYnRM4OzToCYPpVBInuU'} autoplay = {true} />
-        </div>      
+        </div>   
+        {current_track && <SpotifyPlayer 
+                token={props.token} 
+                uris={current_track.uri} 
+                showSaveIcon={true} 
+                initialVolume={.3}
+                playerPosition='bottom'
+                styles={{
+                    sliderColor: 'blue',
+                    sliderHeight: '10px'
+                }}
+            />}
+        </>   
               
     )
 }
