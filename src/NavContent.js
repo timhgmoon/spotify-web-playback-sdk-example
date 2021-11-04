@@ -6,19 +6,21 @@ const NavContent = () => {
   return (
     <>
     <Navbar>
-      <Navbar.Brand href="/">
-        {/* <Link to='/'> */}
+      <Navbar.Brand>
+        <Link to='/'>
           Top-100
-        {/* </Link> */}
+        </Link>
       </Navbar.Brand>
       <Nav className="justify-content-end">
-        <Nav.Link href="/About">
-          About
-        </Nav.Link>
+        <Nav.Item>
+          <Link to="/About">About </Link>
+        </Nav.Item>
 
-        <Nav.Link href="/Login">
+        <Nav.Item>
+          <Link to="/login">
             Login
-        </Nav.Link>
+          </Link>
+        </Nav.Item>
       </Nav>
     </Navbar>
   
@@ -27,5 +29,4 @@ const NavContent = () => {
    
   )
 }
-
 export default NavContent;
