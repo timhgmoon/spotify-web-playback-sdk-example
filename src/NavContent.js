@@ -12,19 +12,15 @@ const NavContent = () => {
         </Link>
       </Navbar.Brand>
       <Nav className="justify-content-end">
-        <Nav.Item>
+        <Nav.Item >
           <Link to="/About">About </Link>
         </Nav.Item>
 
         <Nav.Item>
-          <Link to="/login">
-            Login
-          </Link>
+          <Link to="/login">Login</Link>
         </Nav.Item>
       </Nav>
     </Navbar>
-  
-    
     </>
    
   )

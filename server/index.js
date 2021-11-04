@@ -12,7 +12,8 @@ dotenv.config()
 var spotify_client_id = "3379c8a726944216a96001c56bf22b68"
 var spotify_client_secret = "113ec63e7f2244b08a6940d12210e193"
 
-var spotify_redirect_uri = 'http://localhost:3000/auth/callback'
+// var spotify_redirect_uri = 'http://localhost:3000/auth/callback'
+var spotify_redirect_uri = 'https://timhgmoon.github.io/top-tracks.github.io/auth/callback'
 
 var generateRandomString = function (length) {
   var text = '';
