@@ -1,23 +1,23 @@
 {
   "files": {
     "main.css": "/top-tracks.github.io/static/css/main.765e3aff.chunk.css",
-    "main.js": "/top-tracks.github.io/static/js/main.2cc0f77c.chunk.js",
-    "main.js.map": "/top-tracks.github.io/static/js/main.2cc0f77c.chunk.js.map",
+    "main.js": "/top-tracks.github.io/static/js/main.7a5c67d2.chunk.js",
+    "main.js.map": "/top-tracks.github.io/static/js/main.7a5c67d2.chunk.js.map",
     "runtime-main.js": "/top-tracks.github.io/static/js/runtime-main.7c8f6925.js",
     "runtime-main.js.map": "/top-tracks.github.io/static/js/runtime-main.7c8f6925.js.map",
     "static/css/2.0a9ec390.chunk.css": "/top-tracks.github.io/static/css/2.0a9ec390.chunk.css",
-    "static/js/2.eaf4a23e.chunk.js": "/top-tracks.github.io/static/js/2.eaf4a23e.chunk.js",
-    "static/js/2.eaf4a23e.chunk.js.map": "/top-tracks.github.io/static/js/2.eaf4a23e.chunk.js.map",
+    "static/js/2.af963790.chunk.js": "/top-tracks.github.io/static/js/2.af963790.chunk.js",
+    "static/js/2.af963790.chunk.js.map": "/top-tracks.github.io/static/js/2.af963790.chunk.js.map",
     "index.html": "/top-tracks.github.io/index.html",
     "static/css/2.0a9ec390.chunk.css.map": "/top-tracks.github.io/static/css/2.0a9ec390.chunk.css.map",
     "static/css/main.765e3aff.chunk.css.map": "/top-tracks.github.io/static/css/main.765e3aff.chunk.css.map",
-    "static/js/2.eaf4a23e.chunk.js.LICENSE.txt": "/top-tracks.github.io/static/js/2.eaf4a23e.chunk.js.LICENSE.txt"
+    "static/js/2.af963790.chunk.js.LICENSE.txt": "/top-tracks.github.io/static/js/2.af963790.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.7c8f6925.js",
     "static/css/2.0a9ec390.chunk.css",
-    "static/js/2.eaf4a23e.chunk.js",
+    "static/js/2.af963790.chunk.js",
     "static/css/main.765e3aff.chunk.css",
-    "static/js/main.2cc0f77c.chunk.js"
+    "static/js/main.7a5c67d2.chunk.js"
   ]
 }
