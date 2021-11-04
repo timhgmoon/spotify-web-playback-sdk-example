@@ -24,6 +24,7 @@ const Home = (props) => {
       })
     }, [])
     console.log(melonChart);
+
   
   return (
     <>

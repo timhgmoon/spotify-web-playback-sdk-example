@@ -15,3 +15,11 @@ code {
 img {
   margin-bottom: 10px;
 }
+
+.PlayerRSWP {
+  position: fixed;
+  bottom: 0;
+}
+
+
+

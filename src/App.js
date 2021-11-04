@@ -4,7 +4,7 @@ import './App.css';
 import Track from './Track'
 import Login from './Login'
 import Home from './Home';
-import Nav from './Nav';
+import NavContent from './NavContent';
 
 
 function App() {
@@ -33,7 +33,7 @@ function App() {
     <>
       <div className="app">
 
-        <Nav />
+        <NavContent />
         <main>
             <Route path='/' exact render={routerProps =>
             <Home {...routerProps} handleOnClick={handleOnClick}/>} />
