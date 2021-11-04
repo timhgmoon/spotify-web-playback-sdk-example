@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 function Login() {
     return (
@@ -7,11 +8,9 @@ function Login() {
                 {/* <a className="btn-spotify" href="/auth/login" >
                     Login with Spotify 
                 </a> */}
-                <a className="btn-spotify" >
-                    <Link to="/auth/login">
+                    <Link to="/auth/login" className="btn-spotify">
                     Login with Spotify 
                     </Link>
-                </a>
             </header>
         </div>
     );
