@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^5.1.3",
     "cors": "^2.8.5",
+    "gh-pages": "^3.2.3",
     "react": "^17.0.2",
     "react-bootstrap": "^2.0.1",
     "react-dom": "^17.0.2",
@@ -19,7 +20,9 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "server": "node server",
-    "dev": "run-p server start"
+    "dev": "run-p server start",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": {
     "production": [
@@ -39,5 +42,6 @@
     "http-proxy-middleware": "^2.0.0",
     "npm-run-all": "^4.1.5",
     "request": "^2.88.2"
-  }
+  },
+  "homepage": "https://timhgmoon.github.io/top-tracks.github.io/"
 }
