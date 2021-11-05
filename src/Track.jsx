@@ -41,7 +41,7 @@ function WebPlayback(props) {
             }
         </style>
         <div className="main-card-container">
-            {current_track && <Card className="bg-dark text-white mx-auto p-1" >
+            {current_track && <Card className="bg-dark text-white mx-auto p-1 m-1" >
                 <Card.Img variant="top" src={current_track.album.images[0].url} alt={props.currentTrack.name}/>
                 <Card.Body>
                     <Card.Title>

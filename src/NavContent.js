@@ -5,7 +5,7 @@ import Navbar from 'react-bootstrap/Navbar';
 const NavContent = () => {
   return (
     <>
-    <Navbar className="bg-dark text-white">
+    <Navbar className="bg-dark text-white p-3">
       <Navbar.Brand>
         <Link to="/">
           Top-100

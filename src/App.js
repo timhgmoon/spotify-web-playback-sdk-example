@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import {Route, Link, Switch} from 'react-router-dom';
 import './App.css';
-import Track from './Track'
-import Login from './Login'
+import Track from './Track';
+import Login from './Login';
 import Home from './Home';
+import About from './About';
 import NavContent from './NavContent';
 
 
@@ -38,7 +39,7 @@ function App() {
             <Route path='/' exact render={routerProps =>
             <Home {...routerProps} handleOnClick={handleOnClick}/>} />
             <Route path='/Login' component={Login} />
-            {/* <Route path='/About' render={routerProps => <Track {...routerProps} token={token} />} /> */}
+            <Route path='/About' component={About} />
             <Route path="/songs/:song" render={routerProps => <Track {...routerProps} currentTrack={currentTrack} token={token}/>} />
           </main>
         

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather&display=swap');
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -6,11 +8,11 @@
 
 html, body {
   height: 100%;
+  font-family: 'Merriweather', serif;
 }
 
 body {
   background-color: #333;
-  color: #eee;
   font-family: Helvetica, Arial;
   font-size: 3vmin;
 }
