@@ -1,14 +1,12 @@
 import React from 'react';
-// import {Link, Route } from 'react-router-dom';
 
-function Login(props) {
+function Login() {
     return (
         <div className="App">
             <header className="App-header">
                 <a className="btn-spotify" href="/auth/login" >
-                    {props.token ? 'Login with Spotify' : 'Logged in'}
+                    Login with Spotify 
                 </a>
-           
             </header>
         </div>
     );

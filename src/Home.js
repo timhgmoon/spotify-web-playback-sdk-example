@@ -23,6 +23,8 @@ const Home = (props) => {
         setMelonChart(dataToArr);
       })
     }, [])
+    console.log(melonChart);
+
   
   return (
     <>
@@ -30,7 +32,7 @@ const Home = (props) => {
       <Card.Body className="card-body-title">
         <Row>
           <Col xs={3}md lg={1}>Ranking</Col>
-          <Col xs={6} md={6} lg={3}>Track Title</Col>
+          <Col xs={6} md={6} lg={3}>Song Title</Col>
           <Col xs={3}>Artist</Col>
         </Row>
       </Card.Body>

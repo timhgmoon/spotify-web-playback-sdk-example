@@ -2,25 +2,27 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-const NavContent = (props) => {
-  
+const NavContent = () => {
   return (
     <>
     <Navbar className="bg-dark text-white">
       <Navbar.Brand>
-        <Link to='/'>
+        <Link to="/">
           Top-100
         </Link>
       </Navbar.Brand>
         <Nav.Link as={Link} to="/About">
           About
         </Nav.Link>
-        <Nav.Link>
-          {props.token === '' ? 'Spotify Login' : ''}
+        <Nav.Link as={Link} to="/login">
+          Spotify Login
         </Nav.Link>
     </Navbar>
+  
+    
     </>
    
   )
 }
+
 export default NavContent;

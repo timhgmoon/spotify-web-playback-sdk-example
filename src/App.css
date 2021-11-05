@@ -3,26 +3,6 @@
   margin: 0;
   padding: 0;
 }
-.navbar-brand a:hover{
-  color:  #8ced8c !important;
-}
-.navbar a {
-  color: white;
-  text-decoration: none;
-}
-.nav-link:hover {
-  color:  #a3e6a3 !important;
-}
-.card-body-title{
-  background-color: #9af49a !important; 
-}
-.card a {
-  color: rgb(213, 126, 140);
-  text-decoration: none;
-}
-.card a:hover {
-  color: #ffb7c5 !important;
-}
 
 html, body {
   height: 100%;
@@ -64,6 +44,27 @@ body {
   background-position: center center;
   /*filter: blur(8em) opacity(0.6);*/
   position: absolute;
+}
+
+.navbar-brand a:hover{
+  color:  #8ced8c !important;
+}
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+.nav-link:hover {
+  color:  #a3e6a3 !important;
+}
+.card-body-title{
+  background-color: #9af49a !important; 
+}
+.card a {
+  color: rgb(213, 126, 140);
+  text-decoration: none;
+}
+.card a:hover {
+  color: #ffb7c5 !important;
 }
 
 .main-wrapper {
@@ -135,3 +136,4 @@ body {
 }
 
 img { background: transparent; }
+

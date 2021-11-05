@@ -1,3 +1,7 @@
 main {
   background-color: #e6ffe6;
 }
+
+p:nth-child(1) {
+  margin-top: 10px;
+}
