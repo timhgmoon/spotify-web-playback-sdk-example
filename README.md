@@ -8,7 +8,7 @@
 
 ## Project Description
 
-This app will use the spotify api which can be found here https://developer.spotify.com/documentation/web-api/.  The api will grab top songs from around the world and allow users to choose a song. Selected song will have track name, artist and allow user to play the song through the webpage. 
+This app will use the spotify api and melon chart api which can be found here https://github.com/ko28/melon-api and https://developer.spotify.com/documentation/web-api/.  The api will grab top songs from around the world and allow users to choose a song. Selected song will have track name, artist and allow user to play the song through the webpage. 
 
 ## API
 
@@ -72,10 +72,11 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 | Component | Description | 
 | --- | :---: |  
 | App | This will make the initial data pull and include React Router| 
-| Header | This will render the header include the nav | 
-| Footer | This will render the header include the nav | 
+| NavContent | This will render the header include the nav | 
+| Home | Home page will have the list of songs | 
 | Login | This will allow users to login |
-| WebPlayback | This will show data on selected track |
+| About | Have information about the website |
+| Track | This will show data on selected track |
 
 
 
@@ -83,23 +84,33 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 | Component | Priority | Estimated Time | Time Invested | Actual Time |
 | --- | :---: |  :---: | :---: | :---: |
-| Styling | M | 7hrs| tbd | tbd |
-| Working with API | H | 15hrs| 10hrs | tbd |
-| Listing top tracks | H | 4hrs| tbd | tbd |
-| Grabbing selected track | H | 3hrs| tbd | tbd |
-| Getting lyrics | M | 5hrs| tbd | tbd |
-| Total | H | 32hrs| tbd | tbd |
+| Styling | M | 7hrs| x | 10hrs |
+| Working with API | H | 15hrs | 10hrs | 20hrs |
+| Listing top tracks | H | 4hrs | x | 3hrs |
+| Grabbing selected track | H | 3hrs | x | 7hrs |
+| Getting lyrics | M | 5hrs | x | 2hrs |
+| Tot al | x | 32hrs | x | 42hrs |
 
 ## Additional Libraries
  Use this section to list all supporting libraries and their role in the project such as Axios, ReactStrap, D3, etc. 
+ - React BootStrap
+ - react-spotify-web-playback
+ - google fonts
+
 
 ## Code Snippet
 
 Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
 
 ```
-function reverse(string) {
-	// here is the code to reverse a string of text
-}
+  const [lyrics, setLyrics] = useState(); 
+  fetch(randomData).
+    .then(res => res.json())
+    .then(json => {
+      setLyrics(json.lyric.split('\n'))
+    })
+  {lyrics && lyrics.map(str => <p>{str}</p>)}
 ```
    
+
+  Not sure if it's React bootstrap or React in general but wouldn't read the new line(\n) that the api provided so used the .split method to break lines and display.
