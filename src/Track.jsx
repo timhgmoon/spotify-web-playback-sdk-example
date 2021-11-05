@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import SpotifyPlayer from 'react-spotify-web-playback';
 import Card from 'react-bootstrap/Card';
-import './responsive.css'
-import './track.css'
+import './responsive.css';
+import './track.css';
 
 function WebPlayback(props) {
     const [current_track, setTrack] = useState();

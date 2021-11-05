@@ -10,7 +10,6 @@ const Home = (props) => {
 
   const [melonChart, setMelonChart] = useState();
   
-
   useEffect(() => {
     fetch('https://corsanywhere.herokuapp.com/https://melon.danielko.me/api/v1/chart/live', {
       headers: {

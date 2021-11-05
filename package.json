@@ -1,5 +1,6 @@
 {
   "name": "web-playback-sdk-sample-app",
+  "homepage": "https://timhgmoon.github.io/top-100/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
