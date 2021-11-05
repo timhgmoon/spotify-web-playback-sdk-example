@@ -27,7 +27,7 @@ const Home = (props) => {
   return (
     <>
     <Container fluid="sm, md, lg">
-      <Card.Body>
+      <Card.Body className="card-body-title">
         <Row>
           <Col xs={3}md lg={1}>Ranking</Col>
           <Col xs={6} md={6} lg={3}>Track Title</Col>
