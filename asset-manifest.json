@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/top-tracks.github.io/static/css/main.e69e5994.chunk.css",
-    "main.js": "/top-tracks.github.io/static/js/main.2196abcc.chunk.js",
-    "main.js.map": "/top-tracks.github.io/static/js/main.2196abcc.chunk.js.map",
+    "main.js": "/top-tracks.github.io/static/js/main.8b6889f9.chunk.js",
+    "main.js.map": "/top-tracks.github.io/static/js/main.8b6889f9.chunk.js.map",
     "runtime-main.js": "/top-tracks.github.io/static/js/runtime-main.7c8f6925.js",
     "runtime-main.js.map": "/top-tracks.github.io/static/js/runtime-main.7c8f6925.js.map",
     "static/css/2.0a9ec390.chunk.css": "/top-tracks.github.io/static/css/2.0a9ec390.chunk.css",
@@ -18,6 +18,6 @@
     "static/css/2.0a9ec390.chunk.css",
     "static/js/2.b40c53b7.chunk.js",
     "static/css/main.e69e5994.chunk.css",
-    "static/js/main.2196abcc.chunk.js"
+    "static/js/main.8b6889f9.chunk.js"
   ]
 }
