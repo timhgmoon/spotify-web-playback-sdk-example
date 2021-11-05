@@ -3,6 +3,20 @@
   margin: 0;
   padding: 0;
 }
+.navbar a {
+  color: white;
+  text-decoration: none;
+}
+.nav-item a {
+  
+}
+.card a {
+  color: rgb(213, 126, 140);
+  text-decoration: none;
+}
+.card a:hover {
+  color: #ffb7c5;
+}
 
 html, body {
   height: 100%;

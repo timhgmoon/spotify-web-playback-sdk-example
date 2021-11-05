@@ -33,11 +33,11 @@ function App() {
     <>
       <div className="app">
 
-        <NavContent />
+        <NavContent token = {token} />
         <main>
             <Route path='/' exact render={routerProps =>
             <Home {...routerProps} handleOnClick={handleOnClick}/>} />
-            <Route path='/Login' component={Login} />
+            {/* <Route path='/Login' component={Login} /> */}
             {/* <Route path='/About' render={routerProps => <Track {...routerProps} token={token} />} /> */}
             <Route path="/songs/:song" render={routerProps => <Track {...routerProps} currentTrack={currentTrack} token={token}/>} />
           </main>

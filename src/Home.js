@@ -32,13 +32,13 @@ const Home = (props) => {
       <Card.Body>
         <Row>
           <Col xs={3}md lg={1}>Ranking</Col>
-          <Col xs={6} md={6} lg={3}>Song Name</Col>
+          <Col xs={6} md={6} lg={3}>Track Title</Col>
           <Col xs={3}>Artist</Col>
         </Row>
       </Card.Body>
         {melonChart && melonChart.map(track => {
           return  (
-            <Card>
+            <Card className="bg-transparent">
               <Link to={'/songs/' + track.name} key={track.ranking}onClick={() => {
                 props.handleOnClick(track)
               }}>

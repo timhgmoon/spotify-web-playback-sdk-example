@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
-import './responsive.css'
 import SpotifyPlayer from 'react-spotify-web-playback';
 import Card from 'react-bootstrap/Card';
-import Container from 'react-bootstrap/Container';
+import './responsive.css';
+import './track.css';
 
 function WebPlayback(props) {
     const [current_track, setTrack] = useState();
@@ -41,7 +41,7 @@ function WebPlayback(props) {
             }
         </style>
         <div className="main-card-container">
-            {current_track && <Card className="bg-dark text-white mx-auto p-2" >
+            {current_track && <Card className="bg-dark text-white mx-auto p-1" >
                 <Card.Img variant="top" src={current_track.album.images[0].url} alt={props.currentTrack.name}/>
                 <Card.Body>
                     <Card.Title>
@@ -64,7 +64,7 @@ function WebPlayback(props) {
                     initialVolume={.3}
                     playerPosition='bottom'
                     styles={{
-                        sliderColor: 'blue',
+                        sliderColor: 'rgb(213, 126, 140)',
                         sliderHeight: '10px'
                     }}
                 />
