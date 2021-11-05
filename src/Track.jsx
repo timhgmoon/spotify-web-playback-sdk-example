@@ -17,8 +17,6 @@ function WebPlayback(props) {
             .then(res => res.json())
             .then(json => {
                 setTrack(json.tracks.items[0])
-                console.log(json.tracks.items[0])
-                console.log(json.tracks.items[0].album.images)
             } )
     }, [])
 

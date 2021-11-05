@@ -22,7 +22,7 @@
     "server": "node server",
     "dev": "run-p server start",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d master build"
   },
   "browserslist": {
     "production": [
