@@ -23,8 +23,6 @@ const Home = (props) => {
         setMelonChart(dataToArr);
       })
     }, [])
-    console.log(melonChart);
-
   
   return (
     <>
