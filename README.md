@@ -100,17 +100,3 @@ Time frames are also key in the development cycle.  You have limited time to cod
 
 ## Code Snippet
 
-Use this section to include a brief code snippet of functionality that you are proud of an a brief description.  Code snippet should not be greater than 10 lines of code. 
-
-```
-  const [lyrics, setLyrics] = useState(); 
-  fetch(randomData).
-    .then(res => res.json())
-    .then(json => {
-      setLyrics(json.lyric.split('\n'))
-    })
-  {lyrics && lyrics.map(str => <p>{str}</p>)}
-```
-   
-
-  Not sure if it's React bootstrap or React in general but wouldn't read the new line(\n) that the api provided so used the .split method to break lines and display.
