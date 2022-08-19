@@ -48,9 +48,7 @@ Upload images of wireframe to cloudinary and add the link here with a descriptio
 
 ### MVP/PostMVP - 5min
 
-The functionality will then be divided into two separate lists: MPV and PostMVP.  Carefully decided what is placed into your MVP as the client will expect this functionality to be implemented upon project completion.  
-
-#### MVP EXAMPLE
+#### MVP
 - Find and use external api 
 - Let user login with spotify
 - Render data on page 
@@ -61,7 +59,7 @@ The functionality will then be divided into two separate lists: MPV and PostMVP.
 - Responsive design work: flexbox to style list
 - deploy on github page
 
-#### PostMVP EXAMPLE
+#### PostMVP
 
 - Styling (background, color scheme)
 - Add lyrics of track
