@@ -8,7 +8,7 @@
 
 ## Project Description
 
-This app will use the spotify api and melon chart api which can be found here https://github.com/ko28/melon-api and https://developer.spotify.com/documentation/web-api/.  The api will grab top songs from around the world and allow users to choose a song. Selected song will have track name, artist and allow user to play the song through the webpage. 
+This app uses the spotify api and melon chart api which can be found here https://github.com/ko28/melon-api and https://developer.spotify.com/documentation/web-api/.  The api grabs top 100 songs from Korea and shows artist / album / song title. Selecting a song will bring you to a new page where spotify will play the song inside your browser.
 
 ## API
 
